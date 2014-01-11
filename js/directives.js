@@ -1,1 +1,2 @@
-angular.module('jVj.directives', [])
+angular.module('jvj.directives', [])
+
