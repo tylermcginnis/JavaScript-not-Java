@@ -4,6 +4,7 @@
     <title> Java vs Javascript: A Beginners Guide to Programming Languages </title>
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <base href="index.html">
   </head> 
   <body ng-controller="mainCtrl"> 
     <ng-view></ng-view>
@@ -21,11 +22,11 @@
 
     <!-- CAN MOVE THESE TO PARTIALS/ ONCE WE GET A SERVER RUNNING. NG WONT MAKE CROSS DOMAIN REQUESTS FOR TEMPLATEURL -->
     
-    <!-- HOME PAGE --> 
-    <script type="text/ng-template" id="homePageListings.html">
+    <!-- 4 X X Grid Template --> 
+    <script type="text/ng-template" id="gridTemplate.html">
       <div id="main-logo-container">
-        <span ng-repeat="(index, value) in imageArray">
-          <img src="{{value}}" id="logo-image"/>
+        <span ng-repeat="(key, value) in imageArray">
+          <a ng-href="language/{{key}}"><img data-ng-src="{{value}}" id="logo-image"/></a>
             <br ng-show="(index+1)%4==0"/>
         </span>
       </div>
