@@ -1,7 +1,8 @@
 angular.module('jvj', ['ngRoute','jvj.controllers', 'jvj.directives', 'jvj.services'])
+  .constant('serverRoute', 'http://localhost:3000')
   .config(function($routeProvider){
     $routeProvider.when('/', {
-      template: '<p> {{test}} </p>',
-      controller: 'viewCtrl'
+      templateUrl: 'homePageListings.html',
+      controller: 'homePageListings'
     })
   });

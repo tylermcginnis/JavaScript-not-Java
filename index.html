@@ -7,7 +7,6 @@
   </head> 
   <body ng-controller="mainCtrl"> 
     <ng-view></ng-view>
-    {{test}}
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="http://code.angularjs.org/1.2.7/angular-route.min.js"></script>
@@ -17,5 +16,16 @@
     <script src="js/controllers.js"></script>
     <script src="js/directives.js"></script>
     <script src="js/services.js"></script>
+    
+
+
+    <!-- CAN MOVE THESE TO PARTIALS/ ONCE WE GET A SERVER RUNNING. NG WONT MAKE CROSS DOMAIN REQUESTS FOR TEMPLATEURL -->
+    
+    <!-- HOME PAGE --> 
+    <script type="text/ng-template" id="homePageListings.html">
+      {{test}}
+    </script>
+
+
   </body>
 </html>
