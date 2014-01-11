@@ -32,6 +32,19 @@
       </div>
     </script>
 
+    <!-- 4 X X Grid Template and Content for Language Specific Pages --> 
+    <script type="text/ng-template" id="languageSpecificGrid.html">
+      <div id="page-content">
+        THIS IS THE PAGE FOR: {{specificLanguage}}
+      </div>
+      <div id="main-logo-container">
+        <span ng-repeat="(key, value) in imageArray">
+          <a ng-href="#/language/{{key}}"><img data-ng-src="{{value}}" id="logo-image"/></a>
+            <br ng-show="(index+1)%4==0"/>
+        </span>
+      </div>
+    </script>
+
 
   </body>
 </html>

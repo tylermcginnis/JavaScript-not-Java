@@ -34,5 +34,21 @@ angular.module('jvj.controllers', [])
       ruby: 'images/logos/ruby-logo.png',
     };
 
-    $scope.parameter = $routeParams.lang;
+    var lang = $routeParams.lang;
+
+    if(lang === 'c') $scope.specificLanguage = 'C';
+    if(lang === 'cpp') $scope.specificLanguage = 'C++';
+    if(lang === 'cSharp') $scope.specificLanguage = 'C#';
+    if(lang === 'css3') $scope.specificLanguage = 'CSS3';
+    if(lang === 'html5') $scope.specificLanguage = 'HTML5';
+    if(lang === 'java') $scope.specificLanguage = 'Java';
+    if(lang === 'javascript') $scope.specificLanguage = 'JavaScript';
+    if(lang === 'objectiveC') $scope.specificLanguage = 'Object-C';
+    if(lang === 'perl') $scope.specificLanguage = 'Perl';
+    if(lang === 'php') $scope.specificLanguage = 'PHP';
+    if(lang === 'python') $scope.specificLanguage = 'Python';
+    if(lang === 'ruby') $scope.specificLanguage = 'Ruby';
+
+    
+
   }])
