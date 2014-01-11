@@ -5,8 +5,8 @@ angular.module('jvj', ['ngRoute','jvj.controllers', 'jvj.directives', 'jvj.servi
         templateUrl: 'gridTemplate.html',
         controller: 'homePageListings'
       })
-      .when('language/:lang', {
-        templateUrl: '/gridTemplate.html',
+      .when('/language/:lang', {
+        templateUrl: 'gridTemplate.html',
         controller: 'languageSpecificListings'
       })
       .otherwise({redirectTo: '/'});
