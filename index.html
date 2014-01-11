@@ -23,7 +23,12 @@
     
     <!-- HOME PAGE --> 
     <script type="text/ng-template" id="homePageListings.html">
-      {{test}}
+      <div id="main-logo-container">
+        <span ng-repeat="(index, value) in imageArray">
+          <img src="{{value}}" id="logo-image"/>
+            <br ng-show="(index+1)%4==0"/>
+        </span>
+      </div>
     </script>
 
 
