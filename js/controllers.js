@@ -36,8 +36,14 @@ angular.module('jvj.controllers', [])
 
     var lang = $routeParams.lang;
 
-    if(lang === 'c') $scope.specificLanguage = 'C';
-    if(lang === 'cpp') $scope.specificLanguage = 'C++';
+    if(lang === 'c'){
+      $scope.specificLanguage = 'C';
+      $scope.description = 'THE NEW DESCRIPTION FOR ' + $scope.specificLanguage;
+    } else if(lang === 'cpp'){
+      $scope.specificLanguage = 'C++';
+      $scope.description = 'THE NEW DESCRIPTION FOR ' + $scope.specificLanguage;
+    }
+
     if(lang === 'cSharp') $scope.specificLanguage = 'C#';
     if(lang === 'css3') $scope.specificLanguage = 'CSS3';
     if(lang === 'html5') $scope.specificLanguage = 'HTML5';
@@ -49,6 +55,6 @@ angular.module('jvj.controllers', [])
     if(lang === 'python') $scope.specificLanguage = 'Python';
     if(lang === 'ruby') $scope.specificLanguage = 'Ruby';
 
-    
+
 
   }])
