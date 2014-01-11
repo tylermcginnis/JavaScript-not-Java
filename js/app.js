@@ -1,0 +1,1 @@
+angular.module('jVj', ['jVj.controllers', 'jVj.directives', 'jVj.services'])
