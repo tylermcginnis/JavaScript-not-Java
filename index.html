@@ -28,11 +28,20 @@
     <!-- 4 X X Grid Template and Content for Language Specific Pages --> 
     <script type="text/ng-template" id="languageSpecificGrid.html">
       <div id="page-content">
-        <p>THIS IS THE PAGE FOR: {{specificLanguage}}.</p>
-        <p>THE DESCRIPTION IS: {{description}}</p>
+        <div id="title">
+          <h1>{{specificLanguage}}</h1>
+          <div id="language-image">
+            <img ng-src="{{languageSrc}}"/>
+          </div>
+        </div>
+        <div id="content-container">
+          <div class="description">
+            {{description}}
+          </div>
 
-        <div ng-repeat="resource in resources">
-          <a ng-href="{{resource.url}}">{{resource.siteName}}</a>: {{resource.description}}
+          <div ng-repeat="resource in resources">
+            <a ng-href="{{resource.url}}">{{resource.siteName}}</a>: {{resource.description}}
+          </div>
         </div>
 
       </div>
@@ -48,12 +57,20 @@
     <!-- TEMPLATE FOR THE FRAMEWORK/LIBRARY ITSELF -->
     <script type="text/ng-template" id="libSpecific.html">
       <div id="main-framework-container">
-          THE FRAMEWORK OR LIBRARY IS: {{library}}
-          <p>THE DESCRIPTION IS: {{description}}</p>
-          <div ng-repeat="resource in resources">
-            <a ng-href="{{resource.url}}">{{resource.siteName}}</a>: {{resource.description}}
+          <div id="title">
+            <h1>{{library}}<h1>
+            <div id="language-image">
+              <img ng-src="{{languageSrc}}"/>
+            </div>
           </div>
-
+          <div id="content-container">
+            <div class="description">
+              {{description}}
+            </div>
+            <div ng-repeat="resource in resources">
+              <a ng-href="{{resource.url}}">{{resource.siteName}}</a>: {{resource.description}}
+            </div>
+          </div>
       </div>
     </script>
 

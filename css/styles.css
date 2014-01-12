@@ -9,9 +9,37 @@ body{
   margin-bottom: 20px;
 }
 
+.panel{
+  width: 80%;
+  margin: 0px auto;
+}
+
 #top-slogan{
   position: relative;
   top: 20px;
+}
+
+#title h1{
+  text-align: center;
+  font-size: 68px;
+  font-weight: 300;
+}
+
+#content-container{
+  width: 80%;
+  margin: 60px auto;
+  font-size: 18px;
+}
+
+#language-image{
+  width: 95px;
+  position: absolute;
+  left: 0;  
+  top: 0;
+}
+
+#language-image img{
+  width: 95px;
 }
 
 .large{
@@ -34,7 +62,7 @@ body{
 
 #logo-image {
   max-width: 200px;
-  margin: 2.9%;
+  margin: 2.7%;
   width: 14%;
   max-width: 255px;
   margin-top: 0px;
