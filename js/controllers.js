@@ -68,6 +68,7 @@ angular.module('jvj.controllers', [])
     } else if (lang === 'css3') {
       $scope.specificLanguage = 'CSS3';
       $scope.description = $scope.specificLanguage + ': Style your website!';
+      $scope.lang = 'css3';
       $scope.resources = [
         {
           siteName: "HtmlDog",
@@ -92,6 +93,7 @@ angular.module('jvj.controllers', [])
       ];
     } else if (lang === 'javascript') {
       $scope.specificLanguage = 'JavaScript';
+      $scope.lang = 'javascript';
 
       $scope.imageArray = {
         jquery: 'images/logos/jquery-logo.png',
@@ -223,6 +225,7 @@ angular.module('jvj.controllers', [])
   .controller('libSpecificListing',['$scope','$routeParams', function($scope, $routeParams){
     //If LOGIC to SEE IF Angular, Backbone, etc.
     var lib = $routeParams.lib;
+    console.log("THIS", $routeParams);
 
     if(lib === 'angular'){
       $scope.library = 'Angular';
