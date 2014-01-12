@@ -29,22 +29,31 @@ angular.module('jvj.controllers', [])
 
     if(lang === 'c'){
       $scope.specificLanguage = 'C';
-      $scope.description = 'THE NEW DESCRIPTION FOR ' + $scope.specificLanguage;
+      $scope.lang = 'c';
+      $scope.description = $scope.specificLanguage + ' is a general purpose programming language that many languages, ( including C#, Java, Javascript, Objective-C, Perl, PHP, Python, and more!) have borrowed directly or indirectly from.';
       $scope.resources = [
         {
-          siteName: "Google",
-          url: "http://google.com",
-          description: " is the greatest search engine in the world"
+          siteName: "C Programming on Wikibooks",
+          url: "http://en.wikibooks.org/wiki/C_Programming",
+          description: "a comprehensive, free e-book"
         },
         {
-          siteName: "Yahoo",
-          url: "http://yahoo.com",
-          description: " is better"
+          siteName: "K&R: The C Programming Language",
+          url: "http://www.amazon.com/C-Programming-Language-2nd-Edition/dp/0131103628",
+          description: "THE book"
         },
       ];
     } else if(lang === 'cpp'){
+      $scope.lang = 'cpp';
       $scope.specificLanguage = 'C++';
-      $scope.description = 'THE NEW DESCRIPTION FOR ' + $scope.specificLanguage;
+      $scope.description = $scope.specificLanguage + ' is a language used for operating systems, software, libraries, and making things fast.';
+      $scope.resources = [
+        {
+          siteName: "Stackoverflow: The Definitive C++ Book Guide and List",
+          url: "http://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list",
+          description: "as stated"
+        }
+      ];
     } else if (lang === 'html5') {
       $scope.specificLanguage = 'HTML5';
       $scope.description = $scope.specificLanguage + ' is the language of the web.  Make your first website!' ;
@@ -198,9 +207,38 @@ angular.module('jvj.controllers', [])
     } else if (lang === 'java') {
       $scope.specificLanguage = 'Java';
       $scope.description = $scope.specificLanguage + " is a programming language used in desktop apps, server-side web apps, and Android.";
+       $scope.resources = [
+        {
+          siteName: "Java Programming Wiki",
+          url: "http://en.wikibooks.org/wiki/Java_Programming",
+          description: "A free ebook, good introduction"
+        },
+        {
+          siteName: "Java Resources for a Beginner",
+          url: "http://www.squidoo.com/javaresources",
+          description: "Links to books/tutorials/etc"
+        },
+         {
+          siteName: "Introduction to Programming Using Java, Sixth Edition",
+          url: "http://math.hws.edu/javanotes/",
+          description: "A free ebook aimed at a beginner programmer"
+        }
+      ];
     } else if (lang === 'cSharp') {
       $scope.specificLanguage = 'C#';
-      $scope.description = $scope.specificLanguage + " IS DESCRIPTION";
+      $scope.description = $scope.specificLanguage + " is a programming language developd by Microsoft";
+       $scope.resources = [
+        {
+          siteName: "C# Station",
+          url: "http://www.csharp-station.com/Tutorial.aspx",
+          description: "A free ebook, good introduction"
+        },
+        {
+          siteName: "C# Reference by Microsoft",
+          url: "http://msdn.microsoft.com/en-us/library/618ayhy6.aspx",
+          description: "Official Reference"
+        }
+      ];
     } else if (lang === 'objectiveC') {
       $scope.specificLanguage = 'Objective-C';
       $scope.description = $scope.specificLanguage + " IS DESCRIPTION";
@@ -227,27 +265,118 @@ angular.module('jvj.controllers', [])
     var lib = $routeParams.lib;
     if(lib === 'angular'){
       $scope.library = 'Angular';
+      $scope.description = $scope.library + " is a Javascript front-end framework used to make single-page web-apps. It makes HTML more expressive and readable.  ";
       $scope.resources = [
-              {
-                siteName: "A Better Way to Learn Angular",
-                url: "http://www.thinkster.io/pick/GtaQ0oMGIl/a-better-way-to-learn-angularjs",
-                description: "A series if guideposts on Angular"
-              },
-              {
-                siteName: "Codecademy",
-                url: "https://egghead.io/ ",
-                description: "Short videos on all the core library of Angular"
-              },
-               {
-                siteName: "JQuery",
-                url: "http://api.jquery.com/",
-                description: "Official Jquery Documentation"
-              },
-              {
-                siteName: "CSS Tricks",
-                url: "http://css-tricks.com/",
-                description: "Tutorials, Code Snippets, Videos, Demos, Forum"
-              },
-            ];
+        {
+          siteName: "A Better Way to Learn Angular",
+          url: "http://www.thinkster.io/pick/GtaQ0oMGIl/a-better-way-to-learn-angularjs",
+          description: "A series if guideposts on Angular"
+        },
+        {
+          siteName: "Egghead",
+          url: "https://egghead.io/ ",
+          description: "Short videos on all the core library of Angular"
+        },
+         {
+          siteName: "How Do I Think In AngularJS if I have a Jquery Background",
+          url: "http://stackoverflow.com/questions/14994391/how-do-i-think-in-angularjs-if-i-have-a-jquery-background",
+          description: "Great answer"
+        },
+        {
+          siteName: "Angular Documentation",
+          url: "http://docs.angularjs.org/",
+          description: "Official Docs"
+        },
+      ];
+    } else if (lib === 'backbone') {
+      $scope.library = 'Backbone';
+      $scope.description = $scope.library + " is a front-end javascript framework used to make web-apps.  It gives you the freedom to organize your code, and structure data and user interfaces!";
+      $scope.resources = [
+        {
+          siteName: "Javascript Is Sexy: Learn Backbone.js Completely",
+          url: "http://javascriptissexy.com/learn-backbone-js-completely/",
+          description: "A series if guideposts on Backbone"
+        },
+        {
+          siteName: "Backbone.js",
+          url: "http://backbonejs.org/",
+          description: "Official Website with Documentation"
+        },
+         {
+          siteName: "Links to a ton of tutorials, blog posts, and eample sites",
+          url: "https://github.com/jashkenas/backbone/wiki/Tutorials,-blog-posts-and-example-sites",
+          description: "from Jashkenas"
+        }
+      ];
+    } else if (lib === 'jquery') {
+      $scope.library = 'JQuery';
+      $scope.description = $scope.library + " is a Javascript front-end framework used to make single-page web-apps. It makes HTML more expressive and readable.  ";
+      $scope.resources = [
+        {
+          siteName: "CodeSchool - Try Jquery",
+          url: "http://try.jquery.com/",
+          description: "Interactive Lessons on how to use Jquery"
+        },
+        {
+          siteName: "Codecademy",
+          url: "http://codecademy.com",
+          description: "An interactive website where you can practice your coding skills."
+        },
+         {
+          siteName: "JQuery",
+          url: "http://api.jquery.com/",
+          description: "Official Jquery Documentation"
+        }
+      ];
+    } else if (lib === 'ember') {
+      $scope.library = 'Ember';
+      $scope.description = $scope.library + " is a front-tend javascript framework to make web-apps.";
+      $scope.resources = [
+        {
+          siteName: "Official Ember Guide",
+          url: "http://emberjs.com/guides/",
+          description: "Great starting point"
+        },
+        {
+          siteName: "An In-Depth Introduction To Ember.js",
+          url: "http://coding.smashingmagazine.com/2013/11/07/an-in-depth-introduction-to-ember-js/",
+          description: "A walkthrough the core Ember library."
+        },
+         {
+          siteName: "EmberWatch",
+          url: "http://emberwatch.com/",
+          description: "A listing of talks, screencasts, tutorials, books, and more!"
+        }
+      ];
+    } else if (lib === 'node') {
+      $scope.library = 'Node';
+      $scope.description = $scope.library + " A popular lightweight javascript platform used to create server-side web apps and web servers.";
+      $scope.resources = [
+        {
+          siteName: "Node Beginner",
+          url: "http://www.nodebeginner.org/",
+          description: "An e-book for getting a handle on Node.js for the first time."
+        },
+        {
+          siteName: "Code School - Node",
+          url: "http://node.codeschool.com/levels/1",
+          description: "Interactive tutorials on Node.js, a little Express.js, and redis"
+        },
+         {
+          siteName: "Javascript Is Sexy: Learn Node.js Completely and With Confidence",
+          url: "http://javascriptissexy.com/learn-node-js-completely-and-with-confidence/",
+          description: "A Comprehensive guide to learning Node"
+        },
+        {
+          siteName: "Talk by Ryan Dalh",
+          url: "http://www.youtube.com/watch?v=jo_B4LTHi3I",
+          description: "An Introduction to Node given by its creator"
+        },
+         {
+          siteName: "How to Node",
+          url: "http://howtonode.org/",
+          description: "Website with lots of tutorials"
+        }
+      ];
     }
   }]);
