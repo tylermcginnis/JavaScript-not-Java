@@ -46,12 +46,19 @@
       
       <div id="main-logo-container">
         <span ng-repeat="(key, value) in imageArray">
-          <a ng-href="#/language/{{key}}"><img data-ng-src="{{value}}" id="logo-image"/></a>
+          <a ng-href="#/language/{{lang}}/{{key}}"><img data-ng-src="{{value}}" id="logo-image"/></a>
             <br ng-show="(index+1)%4==0"/>
         </span>
       </div>
     </script>
 
+
+    <!-- TEMPLATE FOR THE FRAMEWORK/LIBRARY ITSELF -->
+    <script type="text/ng-template" id="libSpecific.html">
+      <div id="main-framework-container">
+          THE FRAMEWORK OR LIBRARY IS: {{library}}
+      </div>
+    </script>
 
   </body>
 </html>

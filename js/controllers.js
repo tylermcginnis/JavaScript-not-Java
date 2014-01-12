@@ -92,6 +92,7 @@ angular.module('jvj.controllers', [])
       ];
     } else if (lang === 'javascript') {
       $scope.specificLanguage = 'JavaScript';
+
       $scope.imageArray = {
         jquery: 'images/logos/jquery-logo.png',
         angular: 'images/logos/angular-logo.png',
@@ -219,3 +220,11 @@ angular.module('jvj.controllers', [])
 
 
   }])
+  .controller('libSpecificListing',['$scope','$routeParams', function($scope, $routeParams){
+    //If LOGIC to SEE IF Angular, Backbone, etc.
+    var lib = $routeParams.lib;
+
+    if(lib === 'angular'){
+      $scope.library = 'Angular';
+    }
+  }]);

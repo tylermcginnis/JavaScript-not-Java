@@ -9,5 +9,9 @@ angular.module('jvj', ['ngRoute','jvj.controllers', 'jvj.directives', 'jvj.servi
         templateUrl: 'languageSpecificGrid.html',
         controller: 'languageSpecificListings'
       })
-      .otherwise({redirectTo: '/'});
+      .when('/language/:lang/:lib', {
+        templateUrl: 'libSpecific.html',
+        controller: 'libSpecificListing'
+      })
+      // .otherwise({redirectTo: '/'});
   });
