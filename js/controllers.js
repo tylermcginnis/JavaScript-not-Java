@@ -16,6 +16,14 @@ angular.module('jvj.controllers', [])
       php: 'images/logos/php-logo.png',
       python: 'images/logos/python-logo.jpg',
       ruby: 'images/logos/ruby-logo.png',
+      //
+      jquery: 'images/logos/jquery-logo.png',
+      angular: 'images/logos/angular-logo.png',
+      backbone: 'images/logos/backbone-logo.gif',
+      ember: 'images/logos/emberjs-logo.png',
+      node: 'images/logos/node-logo.png',
+      github: 'images/logos/github-logo.png',
+      wordpress: 'images/logos/wordpress-logo.png',
     };
   }])
   .controller('languageSpecificListings', ['$scope', '$routeParams', function($scope, $routeParams){
@@ -213,7 +221,6 @@ angular.module('jvj.controllers', [])
     // backbone
     // ember
     // node.js
-    // express
     // d3.js
     // mvc
     // github
