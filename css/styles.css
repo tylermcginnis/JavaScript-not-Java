@@ -1,4 +1,43 @@
-#logo-image{
+body{
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.center {
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+#top-slogan{
+  position: relative;
+  top: 25px;
+}
+
+.large{
+  font-size: 48px;
+}
+
+#logo-image:hover{
+  transform:rotate(5deg);
+  -moz-transform:rotate(5deg); /* Firefox 4 */
+  -webkit-transform:rotate(5deg); /* Safari and Chrome */
+  -o-transform:rotate(5deg); /* Opera */
+}
+
+#main-logo-container {
+  width: 85%;
+  margin: 0px auto;
+}
+
+#logo-image {
   max-width: 200px;
-  margin: 50px;
+  margin: 2.9%;
+  width: 14%;
+  max-width: 255px;
+  margin-top: 0px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }

@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html ng-app="jvj">
   <head> 
-    <title> Java vs Javascript: A Beginners Guide to Programming Languages </title>
+    <title> Java vs JavaScript: A beginners guide to the purpose of different programming languages  </title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <base href="index.html">
   </head> 
   <body ng-controller="mainCtrl"> 
+    <div id="top-slogan">
+      <h2 class="center">A beginners guide to the purpose of different programming languages </h2>
+    </div>
     <ng-view></ng-view>
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
@@ -27,7 +31,7 @@
       <div id="main-logo-container">
         <span ng-repeat="(key, value) in imageArray">
           <a ng-href="#/language/{{key}}"><img data-ng-src="{{value}}" id="logo-image"/></a>
-            <br ng-show="(index+1)%4==0"/>
+            <!-- <br ng-show="($index+1)%4==0"/> -->
         </span>
       </div>
     </script>
@@ -47,7 +51,7 @@
       <div id="main-logo-container">
         <span ng-repeat="(key, value) in imageArray">
           <a ng-href="#/language/{{lang}}/{{key}}"><img data-ng-src="{{value}}" id="logo-image"/></a>
-            <br ng-show="(index+1)%4==0"/>
+            <!-- <br ng-show="($index+1)%4==0"/> -->
         </span>
       </div>
     </script>
