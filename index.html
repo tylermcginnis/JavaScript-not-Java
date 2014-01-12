@@ -57,6 +57,11 @@
     <script type="text/ng-template" id="libSpecific.html">
       <div id="main-framework-container">
           THE FRAMEWORK OR LIBRARY IS: {{library}}
+          <p>THE DESCRIPTION IS: {{description}}</p>
+          <div ng-repeat="resource in resources">
+            <a ng-href="{{resource.url}}">{{resource.siteName}}</a>: {{resource.description}}
+          </div>
+
       </div>
     </script>
 
