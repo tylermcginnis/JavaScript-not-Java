@@ -94,10 +94,10 @@ angular.module('jvj.controllers', [])
           description: "Tutorials, Code Snippets, Videos, Demos, Forum"
         },
       ];
-    } else if(lange === 'dotNet'){
+    } else if(lang === 'dotNet'){
       $scope.specificLanguage = '.Net';
       $scope.lang = 'dotNet';
-    } else if(lange === 'git'){
+    } else if(lang === 'git'){
       $scope.specificLanguage = 'CSS3';
       $scope.lang = 'git';
     } else if (lang === 'javascript') {
