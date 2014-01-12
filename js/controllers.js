@@ -16,30 +16,13 @@ angular.module('jvj.controllers', [])
       php: 'images/logos/php-logo.png',
       python: 'images/logos/python-logo.jpg',
       ruby: 'images/logos/ruby-logo.png',
-      //
-      jquery: 'images/logos/jquery-logo.png',
-      angular: 'images/logos/angular-logo.png',
-      backbone: 'images/logos/backbone-logo.gif',
-      ember: 'images/logos/emberjs-logo.png',
-      node: 'images/logos/node-logo.png',
       github: 'images/logos/github-logo.png',
       wordpress: 'images/logos/wordpress-logo.png',
     };
   }])
   .controller('languageSpecificListings', ['$scope', '$routeParams', function($scope, $routeParams){
     $scope.imageArray = {
-      c: 'images/logos/c-logo.jpg',
-      cpp: 'images/logos/cpp-logo.jpeg',
-      cSharp:'images/logos/csharp-logo.png',
-      css3: 'images/logos/css3-logo.png',
-      html5: 'images/logos/html5-logo.png',
-      java: 'images/logos/java-logo.png',
-      javascript: 'images/logos/js-logo.png',
-      objectiveC: 'images/logos/objective-c-logo.png',
-      perl: 'images/logos/perl-logo.JPG',
-      php: 'images/logos/php-logo.png',
-      python: 'images/logos/python-logo.jpg',
-      ruby: 'images/logos/ruby-logo.png',
+
     };
 
     var lang = $routeParams.lang;
@@ -109,6 +92,13 @@ angular.module('jvj.controllers', [])
       ];
     } else if (lang === 'javascript') {
       $scope.specificLanguage = 'JavaScript';
+      $scope.imageArray = {
+        jquery: 'images/logos/jquery-logo.png',
+        angular: 'images/logos/angular-logo.png',
+        backbone: 'images/logos/backbone-logo.gif',
+        ember: 'images/logos/emberjs-logo.png',
+        node: 'images/logos/node-logo.png',
+      }
       $scope.description =  + 'Make your website interactive with' + $scope.specificLanguage + "!";
       $scope.resources = [
         {
