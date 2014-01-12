@@ -15,7 +15,6 @@ angular.module('jvj.controllers', [])
       php: 'images/logos/php-logo.png',
       python: 'images/logos/python-logo.jpg',
       ruby: 'images/logos/ruby-logo.png',
-      // wordpress: 'images/logos/wordpress-logo.png', //will go in PHP
     };
   }])
   .controller('languageSpecificListings', ['$scope', '$routeParams', function($scope, $routeParams){
@@ -50,6 +49,7 @@ angular.module('jvj.controllers', [])
       ];
     } else if (lang === 'html5') {
       $scope.specificLanguage = 'HTML5';
+      $scope.lang = 'html5';
       $scope.description = $scope.specificLanguage + ' is the language of the web.  Make your first website!' ;
       $scope.resources = [
         {
@@ -70,6 +70,10 @@ angular.module('jvj.controllers', [])
       ];
     } else if (lang === 'css3') {
       $scope.specificLanguage = 'CSS3';
+      $scope.imageArray = {
+        bootstrap: 'images/logos/bootstrap-logo.png',
+        foundation: 'images/logos/foundation-logo.png',
+      }
       $scope.description = $scope.specificLanguage + ': Style your website!';
       $scope.lang = 'css3';
       $scope.resources = [
@@ -96,10 +100,24 @@ angular.module('jvj.controllers', [])
       ];
     } else if(lang === 'dotNet'){
       $scope.specificLanguage = '.Net';
+      $scope.description = $scope.specificLanguage + ' is a software framework used by applications created for Windows.';
       $scope.lang = 'dotNet';
     } else if(lang === 'git'){
-      $scope.specificLanguage = 'CSS3';
+      $scope.specificLanguage = 'git';
       $scope.lang = 'git';
+      $scope.description = $scope.specificLanguage + ' is a version control system that allows collaborators to work on the same code without overlapping.';
+      $scope.resources = [
+        {
+          siteName: "Try Git",
+          url: "https://www.codeschool.com/courses/try-git",
+          description: "Code School interactive tutorial that introduces you to Git"
+        },
+        {
+          siteName: "Git For Designers",
+          url: "http://hoth.entp.com/output/git_for_designers.html",
+          description: "Explanation of Git for a beginner"
+        },
+      ];
     } else if (lang === 'javascript') {
       $scope.specificLanguage = 'JavaScript';
       $scope.lang = 'javascript';
@@ -136,6 +154,10 @@ angular.module('jvj.controllers', [])
       ];
     } else if (lang === 'php') {
       $scope.specificLanguage = 'PHP';
+      $scope.lang = 'php';
+      $scope.imageArray = {
+        wordpress: 'images/logos/wordpress-logo.png',
+      }
       $scope.description = $scope.specificLanguage + " is a server-side scripting language that allows developers to create fully dynamic websites." ;
        $scope.resources = [
         {
@@ -156,6 +178,7 @@ angular.module('jvj.controllers', [])
       ];
     } else if (lang === 'ruby') {
       $scope.specificLanguage = 'Ruby';
+      $scope.lang = 'ruby';
       $scope.description = $scope.specificLanguage + " is a general-purpose programming language with a focus on simplicity and productivity.";
        $scope.resources = [
         {
@@ -181,6 +204,7 @@ angular.module('jvj.controllers', [])
       ];
     } else if (lang === 'python') {
       $scope.specificLanguage = 'Python';
+      $scope.lang = 'python';
       $scope.description = $scope.specificLanguage + " is an easy to learn programming language with a focus on easy readability.";
        $scope.resources = [
         {
@@ -206,6 +230,7 @@ angular.module('jvj.controllers', [])
       ];
     } else if (lang === 'java') {
       $scope.specificLanguage = 'Java';
+      $scope.lang = 'java';
       $scope.description = $scope.specificLanguage + " is a programming language used in desktop apps, server-side web apps, and Android.";
        $scope.resources = [
         {
@@ -226,6 +251,7 @@ angular.module('jvj.controllers', [])
       ];
     } else if (lang === 'cSharp') {
       $scope.specificLanguage = 'C#';
+      $scope.lang = 'cSharp';
       $scope.description = $scope.specificLanguage + " is a programming language developd by Microsoft";
        $scope.resources = [
         {
@@ -240,24 +266,38 @@ angular.module('jvj.controllers', [])
         }
       ];
     } else if (lang === 'objectiveC') {
+      $scope.lang = 'objectiveC';
       $scope.specificLanguage = 'Objective-C';
-      $scope.description = $scope.specificLanguage + " IS DESCRIPTION";
+      $scope.description = $scope.specificLanguage + " is used for Mac OSX apps and iPhone iOS apps";
+       $scope.resources = [
+        {
+          siteName: "Paul Hegarty's CS193P Class",
+          url: "https://itunes.apple.com/us/itunes-u/developing-apps-for-ios-sd/id395631522?mt=10",
+          description: "Podcast from Paul Hegarty who teaches iPhone App Development at Stanford"
+        },
+        {
+          siteName: "Objective C Programming Ranch Guide by Aaron Hillegass",
+          url: "http://www.amazon.com/Objective-C-Programming-Ranch-Guide-Guides/dp/0321706285",
+          description: "Short introduction to C and then Objective C"
+        },
+        {
+          siteName: "Ry’s Objective-C Tutorial",
+          url: "http://rypress.com/tutorials/objective-c/",
+          description: "A quick reference and comprehensive intro to newcomers"
+        }
+      ];
     } else if (lang === 'perl') {
       $scope.specificLanguage = 'Perl';
-      $scope.description = $scope.specificLanguage + " IS DESCRIPTION";
+      $scope.lang = 'perl';
+      $scope.description = $scope.specificLanguage + " is a programming language used for system administration, web development, and networks.";
+       $scope.resources = [
+        {
+          siteName: "Perl Intro",
+          url: "http://perldoc.perl.org/perlintro.html",
+          description: "An introduction to Perl from the official documentation."
+        }
+      ];
     }
-
-    // jquery
-    // angular
-    // backbone
-    // ember
-    // node.js
-    // d3.js
-    // mvc
-    // worpress
-
-
-
   }])
   .controller('libSpecificListing',['$scope','$routeParams', function($scope, $routeParams){
     //If LOGIC to SEE IF Angular, Backbone, etc.
@@ -375,6 +415,26 @@ angular.module('jvj.controllers', [])
           siteName: "How to Node",
           url: "http://howtonode.org/",
           description: "Website with lots of tutorials"
+        }
+      ];
+    } else if (lib === 'wordpress') {
+      $scope.library = 'Wordpress';
+      $scope.description = $scope.library + " is a popular open-source blogging tool with a huge library of plugins and templates.";
+      $scope.resources = [
+        {
+          siteName: "WordPress Lessons",
+          url: "http://codex.wordpress.org/WordPress_Lessons",
+          description: "Official Tutorials from Wordpress"
+        },
+        {
+          siteName: "Wordpress Tutorials",
+          url: "http://teamtreehouse.com/library/topic:wordpress",
+          description: "from Team Tree House"
+        },
+         {
+          siteName: "50 Wordpress Tutorials",
+          url: "http://www.creativebloq.com/web-design/wordpress-tutorials-designers-1012990",
+          description: "Links to short Wordpress tutorials on various topics"
         }
       ];
     }
