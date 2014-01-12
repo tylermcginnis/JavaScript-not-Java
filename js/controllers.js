@@ -77,6 +77,9 @@ angular.module('jvj.controllers', [])
         $scope.imageArray = {
           bootstrap: 'images/logos/bootstrap-logo.png',
           foundation: 'images/logos/foundation-logo.png',
+          less: 'images/logos/less-css-logo.png',
+          sass: 'images/logos/sass-css-logo.png',
+          stylus: 'images/logos/stylus-logo.png',
         }
         $scope.description = $scope.specificLanguage + ': Style your website!';
         $scope.lang = 'css3';
@@ -92,7 +95,7 @@ angular.module('jvj.controllers', [])
             description: "An interactive website where you can practice your coding skills."
           },
            {
-            siteName: "Mozilla Dev Network: HTML",
+            siteName: "Mozilla Dev Network: CSS",
             url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
             description: "A thorough reference guide."
           },
@@ -107,8 +110,15 @@ angular.module('jvj.controllers', [])
         $scope.languageSrc = 'images/logos/dot-net.png';
         $scope.description = $scope.specificLanguage + ' is a software framework used by applications created for Windows.';
         $scope.lang = 'dotNet';
-      } else if(lang === 'git'){
-        $scope.specificLanguage = 'git';
+        $scope.resources = [
+          {
+            siteName: "Official Documentation",
+            url: "http://msdn.microsoft.com/en-us/library/aa719441(v=vs.71).aspx",
+            description: "From Microsoft"
+          }
+        ];
+    } else if(lang === 'git'){
+        $scope.specificLanguage = 'Git';
         $scope.lang = 'git';
         $scope.languageSrc = 'images/logos/git-logo.png';
         $scope.description = $scope.specificLanguage + ' is a version control system that allows collaborators to work on the same code without overlapping.';
@@ -124,7 +134,7 @@ angular.module('jvj.controllers', [])
             description: "Explanation of Git for a beginner"
           },
         ];
-    } else if (lang === 'javascript') {
+    }  else if (lang === 'javascript') {
         $scope.specificLanguage = 'JavaScript';
         $scope.lang = 'javascript';
         $scope.languageSrc = 'images/logos/js-logo.png';
@@ -136,52 +146,54 @@ angular.module('jvj.controllers', [])
           ember: 'images/logos/emberjs-logo.png',
           node: 'images/logos/node-logo.png',
         }
-        $scope.description =  + 'Make your website interactive with' + $scope.specificLanguage + "!";
+
+        $scope.description = 'Make your website interactive with' + $scope.specificLanguage + "!";
         $scope.resources = [
           {
-            siteName: "HtmlDog",
-            url: "http://htmldog.com/guides/css/beginner/",
-            description: "A good beginner's guide to styling."
+            siteName: "Javascript Is Sexy",
+            url: "http://javascriptissexy.com/",
+            description: "Articles, Tutorials, Links"
+          },
+          {
+            siteName: "Eloquent Javascript",
+            url: "http://eloquentjavascript.net/",
+            description: "An ebook that introduces javascript to a beginner"
+          },
+           {
+            siteName: "Mozilla Dev Network",
+            url: "https://developer.mozilla.org/en-US/",
+            description: "A comprehensive reference guide."
           },
           {
             siteName: "Codecademy",
-            url: "http://codecademy.com",
-            description: "An interactive website where you can practice your coding skills."
-          },
-           {
-            siteName: "Mozilla Dev Network: HTML",
-            url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
-            description: "A thorough reference guide."
-          },
-          {
-            siteName: "CSS Tricks",
-            url: "http://css-tricks.com/",
-            description: "Tutorials, Code Snippets, Videos, Demos, Forum"
+            url: "http://www.codecademy.com/",
+            description: "Interactive tutorials"
           },
         ];
     } else if (lang === 'php') {
-        $scope.specificLanguage = 'PHP';
-        $scope.lang = 'php';
-        $scope.languageSrc = 'images/logos/php-logo.png';
-        $scope.imageArray = {
-          wordpress: 'images/logos/wordpress-logo.png',
-        }
-        $scope.description = $scope.specificLanguage + " is a server-side scripting language that allows developers to create fully dynamic websites." ;
-         $scope.resources = [
-          {
-            siteName: "PHP 101: PHP For the Absolute Beginner",
-            url: "http://devzone.zend.com/6/php-101-php-for-the-absolute-beginner/",
-            description: "A series of posts for a beginner using PHP."
-          },
-          {
-            siteName: "Codecademy",
-            url: "http://codecademy.com",
-            description: "An interactive website where you can practice your coding skills."
-          },
-           {
-            siteName: "Web Monkey",
-            url: "http://www.webmonkey.com/2010/02/php_tutorial_for_beginners/",
-            description: "PHP Tutorial for Beginners"
+      $scope.specificLanguage = 'PHP';
+      $scope.specificLanguage = 'PHP';
+      $scope.lang = 'php';
+      $scope.imageArray = {
+        wordpress: 'images/logos/wordpress-logo.png',
+        mySQL: 'images/logos/mysql-logo.png',
+      }
+      $scope.description = $scope.specificLanguage + " is a server-side scripting language that allows developers to create fully dynamic websites." ;
+       $scope.resources = [
+        {
+          siteName: "PHP 101: PHP For the Absolute Beginner",
+          url: "http://devzone.zend.com/6/php-101-php-for-the-absolute-beginner/",
+          description: "A series of posts for a beginner using PHP."
+        },
+        {
+          siteName: "Codecademy",
+          url: "http://codecademy.com",
+          description: "An interactive website where you can practice your coding skills."
+        },
+         {
+          siteName: "Web Monkey",
+          url: "http://www.webmonkey.com/2010/02/php_tutorial_for_beginners/",
+          description: "PHP Tutorial for Beginners"
           }
         ];
     } else if (lang === 'ruby') {
@@ -216,7 +228,6 @@ angular.module('jvj.controllers', [])
         $scope.specificLanguage = 'Python';
         $scope.lang = 'python';
         $scope.languageSrc = 'images/logos/python-logo.jpg';
-
         $scope.description = $scope.specificLanguage + " is an easy to learn programming language with a focus on easy readability.";
          $scope.resources = [
           {
@@ -225,7 +236,7 @@ angular.module('jvj.controllers', [])
             description: "A popular ebook on Python"
           },
           {
-            siteName: "The Python Tutorial¶",
+            siteName: "The Python Tutorial",
             url: "http://docs.python.org/2/tutorial/index.html",
             description: "A good beginner's guide"
           },
@@ -459,5 +470,82 @@ angular.module('jvj.controllers', [])
             description: "Links to short Wordpress tutorials on various topics"
           }
         ];
-      }
+    } else if (lib === 'bootstrap') {
+        $scope.library = 'Bootstrap';
+        $scope.languageSrc = 'images/logos/bootstrap-logo.png';
+        $scope.description = $scope.library + " is a responsive design, front-end toolkit from Twitter.";
+        $scope.resources = [
+          {
+            siteName: "Bootstrap",
+            url: "http://getbootstrap.com/",
+            description: "Official Bootstrap Site"
+          },
+        ];
+    } else if (lib === 'foundation') {
+        $scope.library = 'Foundation';
+        $scope.languageSrc = 'images/logos/foundation-logo.png';
+        $scope.description = $scope.library + " is a responsive design, front-end framework.";
+        $scope.resources = [
+          {
+            siteName: "Foundation",
+            url: "http://foundation.zurb.com/",
+            description: "Official Foundation Site"
+          },
+        ];
+    } else if (lib === 'mongodb') {
+        $scope.library = 'MongoDB';
+        $scope.languageSrc = 'images/logos/mongodb-logo.png';
+        $scope.description = $scope.library + " is a popular database that uses javascript JSON objects to store data.";
+        $scope.resources = [
+          {
+            siteName: "MongoDB",
+            url: "http://www.mongodb.org/",
+            description: "Official MongoDB Site"
+          },
+        ];
+    } else if (lib === 'mysql') {
+        $scope.library = 'mySQL';
+        $scope.languageSrc = 'images/logos/mysql-logo.png';
+        $scope.description = $scope.library + " is a popular relational database.";
+        $scope.resources = [
+          {
+            siteName: "MySQL",
+            url: "http://www.mysql.com/",
+            description: "Official MySQL Site"
+          },
+        ];
+    } else if (lib === 'less') {
+        $scope.library = 'LESS';
+        $scope.languageSrc = 'images/logos/less-css-logo.png';
+        $scope.description = $scope.library + " extends CSS with dynamic behavior.";
+        $scope.resources = [
+          {
+            siteName: "LESS",
+            url: "http://lesscss.org/",
+            description: "Official LESS Site"
+          },
+        ];
+    } else if (lib === 'sass') {
+        $scope.library = 'Sass';
+        $scope.languageSrc = 'images/logos/sass-css-logo.png';
+        $scope.description = $scope.library + " is a scripting language that is interpreted into CSS.";
+        $scope.resources = [
+          {
+            siteName: "Sass",
+            url: "http://sass-lang.com/",
+            description: "Official Sass Site"
+          },
+        ];
+    } else if (lib === 'stylus') {
+        $scope.library = 'Stylus';
+        $scope.languageSrc = 'images/logos/stylus-logo.png';
+        $scope.description = $scope.library + " is a scripting language interprted into CSS.";
+        $scope.resources = [
+          {
+            siteName: "Stylus",
+            url: "http://learnboost.github.io/stylus/",
+            description: "Official Stylus Site"
+          },
+        ];
+    }
   }]);
