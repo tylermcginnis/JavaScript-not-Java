@@ -223,8 +223,30 @@ angular.module('jvj.controllers', [])
   .controller('libSpecificListing',['$scope','$routeParams', function($scope, $routeParams){
     //If LOGIC to SEE IF Angular, Backbone, etc.
     var lib = $routeParams.lib;
-
+    console.log($routeParams)
     if(lib === 'angular'){
       $scope.library = 'Angular';
+      $scope.resources = [
+              {
+                siteName: "A Better Way to Learn Angular",
+                url: "http://www.thinkster.io/pick/GtaQ0oMGIl/a-better-way-to-learn-angularjs",
+                description: "A series if guideposts on Angular"
+              },
+              {
+                siteName: "Codecademy",
+                url: "https://egghead.io/ ",
+                description: "Short videos on all the core library of Angular"
+              },
+               {
+                siteName: "JQuery",
+                url: "http://api.jquery.com/",
+                description: "Official Jquery Documentation"
+              },
+              {
+                siteName: "CSS Tricks",
+                url: "http://css-tricks.com/",
+                description: "Tutorials, Code Snippets, Videos, Demos, Forum"
+              },
+            ];
     }
   }]);
