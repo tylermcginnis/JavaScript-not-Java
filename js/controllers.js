@@ -1,13 +1,12 @@
 angular.module('jvj.controllers', [])
-  .controller('mainCtrl', ['$scope', '$routeParams', function($scope){
-    $scope.test = 'testtest';
-  }])
   .controller('homePageListings', ['$scope', '$routeParams', function($scope, $routeParams){
     $scope.imageArray = {
       c: 'images/logos/c-logo.jpg',
       cpp: 'images/logos/cpp-logo.jpeg',
       cSharp:'images/logos/csharp-logo.png',
       css3: 'images/logos/css3-logo.png',
+      dotNet: 'images/logos/dot-net.png',
+      git: 'images/logos/git-logo.png',
       html5: 'images/logos/html5-logo.png',
       java: 'images/logos/java-logo.png',
       javascript: 'images/logos/js-logo.png',
@@ -16,15 +15,10 @@ angular.module('jvj.controllers', [])
       php: 'images/logos/php-logo.png',
       python: 'images/logos/python-logo.jpg',
       ruby: 'images/logos/ruby-logo.png',
-      github: 'images/logos/github-logo.png',
-      wordpress: 'images/logos/wordpress-logo.png',
+      // wordpress: 'images/logos/wordpress-logo.png', //will go in PHP
     };
   }])
   .controller('languageSpecificListings', ['$scope', '$routeParams', function($scope, $routeParams){
-    $scope.imageArray = {
-
-    };
-
     var lang = $routeParams.lang;
 
     if(lang === 'c'){
@@ -100,6 +94,12 @@ angular.module('jvj.controllers', [])
           description: "Tutorials, Code Snippets, Videos, Demos, Forum"
         },
       ];
+    } else if(lange === 'dotNet'){
+      $scope.specificLanguage = '.Net';
+      $scope.lang = 'dotNet';
+    } else if(lange === 'git'){
+      $scope.specificLanguage = 'CSS3';
+      $scope.lang = 'git';
     } else if (lang === 'javascript') {
       $scope.specificLanguage = 'JavaScript';
       $scope.lang = 'javascript';
@@ -254,7 +254,6 @@ angular.module('jvj.controllers', [])
     // node.js
     // d3.js
     // mvc
-    // github
     // worpress
 
 

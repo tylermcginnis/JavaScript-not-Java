@@ -11,7 +11,7 @@ body{
 
 #top-slogan{
   position: relative;
-  top: 25px;
+  top: 20px;
 }
 
 .large{
@@ -27,7 +27,9 @@ body{
 
 #main-logo-container {
   width: 85%;
-  margin: 0px auto;
+  margin: 8px auto;
+  position: relative;
+  top: 25px;
 }
 
 #logo-image {
