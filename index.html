@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <base href="index.html">
   </head> 
-  <body> 
+  <body ng-controller="parentCtrl"> 
     <ng-view></ng-view>
 
 
@@ -16,8 +16,8 @@
     <!-- 4 X X Grid Template --> 
     <script type="text/ng-template" id="gridTemplate.html">
       <div id="main-logo-container">
-        <span ng-repeat="(key, value) in imageArray">
-          <a ng-href="#/language/{{key}}"><img data-ng-src="{{value}}" id="logo-image"/></a>
+        <span ng-repeat="(key, value) in languageLogos.languages">
+          <a ng-href="#/language/{{key}}"><img data-ng-src="{{value.logo}}" id="logo-image"/></a>
         </span>
       </div>
     </script>
@@ -44,7 +44,7 @@
       </div>
       
       <div id="main-logo-container">
-        <span ng-repeat="(key, value) in imageArray">
+        <span ng-repeat="(key, value) in libraries">
           <a ng-href="#/language/{{lang}}/{{key}}"><img data-ng-src="{{value}}" id="logo-image"/></a>
         </span>
       </div>

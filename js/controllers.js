@@ -1,21 +1,54 @@
 angular.module('jvj.controllers', [])
-  .controller('homePageListings', ['$scope', '$routeParams', function($scope, $routeParams){
-    $scope.imageArray = {
-      c: 'images/logos/c-logo.jpg',
-      cpp: 'images/logos/cpp-logo.jpeg',
-      cSharp:'images/logos/csharp-logo.png',
-      css3: 'images/logos/css3-logo.png',
-      dotNet: 'images/logos/dot-net.png',
-      git: 'images/logos/git-logo.png',
-      html5: 'images/logos/html5-logo.png',
-      java: 'images/logos/java-logo.png',
-      javascript: 'images/logos/js-logo.png',
-      objectiveC: 'images/logos/objective-c-logo.png',
-      perl: 'images/logos/perl-logo.JPG',
-      php: 'images/logos/php-logo.png',
-      python: 'images/logos/python-logo.jpg',
-      ruby: 'images/logos/ruby-logo.png',
+  .controller('parentCtrl', ['$scope', function($scope){
+    $scope.languageLogos = {
+      languages: {
+        c: {
+          logo: 'images/logos/c-logo.jpg',
+        },
+        cpp: {
+          logo: 'images/logos/cpp-logo.jpeg'
+        },
+        cSharp: {
+          logo: 'images/logos/csharp-logo.png'
+        },
+        css3: {
+          logo: 'images/logos/css3-logo.png'
+        },
+        dotNet: {
+          logo: 'images/logos/dot-net.png'
+        },
+        git: {
+          logo: 'images/logos/git-logo.png',
+        },
+        html5: {
+          logo: 'images/logos/html5-logo.png'
+        },
+        java: {
+          logo: 'images/logos/java-logo.png'
+        },
+        javascript: {
+          logo: 'images/logos/js-logo.png',
+        },
+        objectiveC: {
+          logo: 'images/logos/objective-c-logo.png'
+        },
+        perl: {
+          logo: 'images/logos/perl-logo.JPG'
+        },
+        php: {
+          logo: 'images/logos/php-logo.png'
+        },
+        python: {
+          logo: 'images/logos/python-logo.jpg'
+        },
+        ruby: {
+          logo: 'images/logos/ruby-logo.png'
+        },
+      },
     };
+  }])
+  .controller('homePageListings', ['$scope', '$routeParams', function($scope, $routeParams){
+
   }])
   .controller('languageSpecificListings', ['$scope', '$routeParams', function($scope, $routeParams){
     var lang = $routeParams.lang;
@@ -23,7 +56,7 @@ angular.module('jvj.controllers', [])
     if(lang === 'c'){
       $scope.specificLanguage = 'C';
       $scope.lang = 'c';
-      $scope.languageSrc = 'images/logos/c-logo.jpg';
+      $scope.languageSrc = $scope.imageObj.c;
       $scope.description = $scope.specificLanguage + ' is a general purpose programming language that many languages, ( including C#, Java, Javascript, Objective-C, Perl, PHP, Python, and more!) have borrowed directly or indirectly from.';
       $scope.resources = [
         {
@@ -74,7 +107,7 @@ angular.module('jvj.controllers', [])
     } else if (lang === 'css3') {
         $scope.specificLanguage = 'CSS3';
         $scope.languageSrc = 'images/logos/css3-logo.png';
-        $scope.imageArray = {
+        $scope.imageObj = {
           bootstrap: 'images/logos/bootstrap-logo.png',
           foundation: 'images/logos/foundation-logo.png',
           less: 'images/logos/less-css-logo.png',
@@ -139,7 +172,7 @@ angular.module('jvj.controllers', [])
         $scope.lang = 'javascript';
         $scope.languageSrc = 'images/logos/js-logo.png';
 
-        $scope.imageArray = {
+        $scope.libraries = {
           jquery: 'images/logos/jquery-logo.png',
           angular: 'images/logos/angular-logo.png',
           backbone: 'images/logos/backbone-logo.gif',
@@ -174,7 +207,7 @@ angular.module('jvj.controllers', [])
       $scope.specificLanguage = 'PHP';
       $scope.specificLanguage = 'PHP';
       $scope.lang = 'php';
-      $scope.imageArray = {
+      $scope.imageObj = {
         wordpress: 'images/logos/wordpress-logo.png',
         mySQL: 'images/logos/mysql-logo.png',
       }

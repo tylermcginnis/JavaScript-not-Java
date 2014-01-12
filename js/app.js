@@ -13,5 +13,5 @@ angular.module('jvj', ['ngRoute','jvj.controllers', 'jvj.directives', 'jvj.servi
         templateUrl: 'libSpecific.html',
         controller: 'libSpecificListing'
       })
-      // .otherwise({redirectTo: '/'});
+      .otherwise({redirectTo: '/'});
   });
