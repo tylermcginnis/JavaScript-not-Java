@@ -28,8 +28,8 @@
     <!-- 4 X X Grid Template and Content for Language Specific Pages --> 
     <script type="text/ng-template" id="languageSpecificGrid.html">
       <div id="page-content">
-        <p>THIS IS THE PAGE FOR: {{specificLanguage}}.</p>
-        <p>THE DESCRIPTION IS: {{description}}</p>
+        <p>{{specificLanguage}}</p>
+        <p>{{description}}</p>
 
         <div ng-repeat="resource in resources">
           <a ng-href="{{resource.url}}">{{resource.siteName}}</a>: {{resource.description}}
@@ -48,8 +48,7 @@
     <!-- TEMPLATE FOR THE FRAMEWORK/LIBRARY ITSELF -->
     <script type="text/ng-template" id="libSpecific.html">
       <div id="main-framework-container">
-          THE FRAMEWORK OR LIBRARY IS: {{library}}
-          <p>THE DESCRIPTION IS: {{description}}</p>
+          <p>{{description}}</p>
           <div ng-repeat="resource in resources">
             <a ng-href="{{resource.url}}">{{resource.siteName}}</a>: {{resource.description}}
           </div>
