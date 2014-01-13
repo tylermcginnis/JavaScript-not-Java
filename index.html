@@ -26,17 +26,17 @@
     <script type="text/ng-template" id="languageSpecificGrid.html">
       <div id="page-content">
         <div id="title">
-          <h1>{{specificLanguage}}</h1>
+          <h1>{{langObj.lang}}</h1>
           <div id="language-image">
-            <img ng-src="{{languageSrc}}"/>
+            <img ng-src="{{langObj.langSrc}}"/>
           </div>
         </div>
         <div id="content-container">
           <div class="description">
-            {{description}}
+            {{langObj.description}}
           </div>
 
-          <div ng-repeat="resource in resources">
+          <div ng-repeat="resource in langObj.resources">
             <a ng-href="{{resource.url}}">{{resource.siteName}}</a>: {{resource.description}}
           </div>
         </div>
@@ -44,8 +44,8 @@
       </div>
       
       <div id="main-logo-container">
-        <span ng-repeat="(key, value) in libraries">
-          <a ng-href="#/language/{{lang}}/{{key}}"><img data-ng-src="{{value}}" id="logo-image"/></a>
+        <span ng-repeat="(key, value) in langObj.libraries">
+          <a ng-href="#/language/{{langObj.lang}}/{{key}}"><img data-ng-src="{{value}}" id="logo-image"/></a>
         </span>
       </div>
     </script>
